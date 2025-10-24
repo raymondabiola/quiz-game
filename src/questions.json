@@ -1,0 +1,29 @@
+[
+  {
+    "question": "Which of these is an animal?",
+    "answers": [
+      { "text": "Berlin", "isCorrect": false },
+      { "text": "Book", "isCorrect": false },
+      { "text": "Goat", "isCorrect": true },
+      { "text": "Dishes", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Which of these is a number?",
+    "answers": [
+      { "text": "Earth", "isCorrect": false },
+      { "text": "2", "isCorrect": true },
+      { "text": "*", "isCorrect": false },
+      { "text": "V", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Which of these is a Nigerian local meal'?",
+    "answers": [
+      { "text": "Eba", "isCorrect": true },
+      { "text": "Sharwama", "isCorrect": false },
+      { "text": "Indomie", "isCorrect": false },
+      { "text": "Dates", "isCorrect": false }
+    ]
+  }
+]
