@@ -35,6 +35,7 @@ function App() {
         </div>
       ) : (
         <div className="question-section">
+          <h1>QUIZ GAME</h1>
           <h2>
             Question {currentQuestion + 1} / {questions.length}
           </h2>
