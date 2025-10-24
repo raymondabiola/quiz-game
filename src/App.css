@@ -62,7 +62,7 @@ button:hover {
   margin: 1rem 0;
   font-weight: bold;
   color: #00ffb7;
-  animation: fadeInOut 1s ease-in-out;
+  animation: fadeInOut 3s ease-in-out;
 }
 
 @keyframes fadeInOut {
@@ -70,7 +70,13 @@ button:hover {
     opacity: 0;
     transform: scale(0.9);
   }
-  50% {
+
+  20% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  80% {
     opacity: 1;
     transform: scale(1);
   }
