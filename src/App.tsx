@@ -6,16 +6,25 @@ function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
+  const [feedback, setFeedback] = useState<string | null>(null);
 
   const handleAnswer = (isCorrect: boolean) => {
-    if (isCorrect) setScore(score + 1);
-
-    const next = currentQuestion + 1;
-    if (next < questions.length) {
-      setCurrentQuestion(next);
+    if (isCorrect) {
+      setFeedback("✅ Correct!");
+      setScore(score + 1);
     } else {
-      setShowScore(true);
+      setFeedback("❌ Wrong!");
     }
+
+    setTimeout(() => {
+      setFeedback(null);
+      const next = currentQuestion + 1;
+      if (next < questions.length) {
+        setCurrentQuestion(next);
+      } else {
+        setShowScore(true);
+      }
+    }, 1000);
   };
 
   return (
@@ -30,9 +39,16 @@ function App() {
             Question {currentQuestion + 1} / {questions.length}
           </h2>
           <h3>{questions[currentQuestion].question}</h3>
+
+          {feedback && <p className="feedback">{feedback}</p>}
+
           <div className="answer-section">
             {questions[currentQuestion].answers.map((ans, index) => (
-              <button key={index} onClick={() => handleAnswer(ans.isCorrect)}>
+              <button
+                key={index}
+                onClick={() => handleAnswer(ans.isCorrect)}
+                disabled={feedback !== null}
+              >
                 {ans.text}
               </button>
             ))}
